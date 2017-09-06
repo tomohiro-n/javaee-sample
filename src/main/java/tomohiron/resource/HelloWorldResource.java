@@ -11,8 +11,8 @@ import javax.ws.rs.core.MediaType;
 public class HelloWorldResource {
 
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String hello() {
-		return "hello";
+	@Produces(MediaType.APPLICATION_JSON)
+	public SampleModel hello() {
+		return new SampleModel("hello");
 	}
 }
