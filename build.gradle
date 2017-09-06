@@ -29,6 +29,8 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
     testCompile group: 'junit', name: 'junit', version: '4.12'
     providedCompile 'javax:javaee-api:7.0'
+    compile 'org.glassfish.jersey.core:jersey-client:2.25.1'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.25.1'
 }
 
 compileKotlin {
