@@ -8,7 +8,9 @@ class HelloService {
 
     private val logger = KotlinLogging.logger {}
 
+    var text : String = "aaa"
+
     fun sayHello() {
-        logger.warn { "hello from the service" }
+        logger.warn { "hello from the service " + text }
     }
 }
