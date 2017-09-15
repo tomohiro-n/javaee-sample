@@ -1,4 +1,4 @@
-package tomohiron
+package tomohiron.ejb
 
 import mu.KotlinLogging
 import tomohiron.service.HelloService
@@ -19,21 +19,21 @@ class HelloTextUpdater {
 
     private val logger = KotlinLogging.logger {}
 
-//    @Resource
-//    private lateinit var helloTextUpdateExecutor : ManagedScheduledExecutorService
-//
-//    private lateinit var task : ScheduledFuture<*>
-//
-//    @Inject
-//    lateinit var helloService : HelloService
+    @Resource
+    private lateinit var helloTextUpdateExecutor : ManagedScheduledExecutorService
+
+    private lateinit var task : ScheduledFuture<*>
+
+    @Inject
+    lateinit var helloService : HelloService
 
     @PostConstruct
     fun startUp() {
         logger.warn { "post-costruct config" }
-//        task = helloTextUpdateExecutor.scheduleAtFixedRate({
-//            logger.warn { "updated text!" }
-//            helloService.text = "bbb"
-//        }, 15, 15, TimeUnit.SECONDS)
+        task = helloTextUpdateExecutor.scheduleAtFixedRate({
+            logger.warn { "updated text!" }
+            helloService.text = "bbb"
+        }, 15, 15, TimeUnit.SECONDS)
     }
 
 //    /** 終了時の処理。スケジュールタスクを終了させる。  */

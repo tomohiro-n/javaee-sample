@@ -19,4 +19,9 @@
 		<servlet-name>SampleApp</servlet-name>
 		<url-pattern>/api/*</url-pattern>
 	</servlet-mapping>
+
+	<resource-env-ref>
+		<resource-env-ref-name>concurrent/scheduledExecutor1</resource-env-ref-name>
+		<resource-env-ref-type>javax.enterprise.concurrent.ManagedScheduledExecutorService</resource-env-ref-type>
+	</resource-env-ref>
 </web-app>
